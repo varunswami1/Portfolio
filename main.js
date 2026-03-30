@@ -3,22 +3,55 @@
    DSE3251 Web Technologies · MUJ 2027
 ───────────────────────────────────────── */
 
-const EMAILJS_PUBLIC_KEY  = 'me69vZfOASKNtOK0l';   
-const EMAILJS_SERVICE_ID  = 'service_ewxtz2e';   
-const EMAILJS_TEMPLATE_ID = 'template_mwpmrkh'; 
+/* ═══════════════════════════════════════
+   EMAILJS CONFIGURATION
+   -------
+   Steps to activate the contact form:
+   1. Sign up free at https://www.emailjs.com
+   2. Create a new Email Service (Gmail recommended)
+   3. Create an Email Template — use these variables in it:
+        {{from_name}}   → sender's name
+        {{reply_to}}    → sender's email
+        {{subject}}     → message subject
+        {{message}}     → message body
+        {{to_name}}     → put "Varun" or any fixed text
+   4. Copy your Public Key, Service ID, and Template ID
+   5. Replace the three placeholder strings below
+═══════════════════════════════════════ */
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abc123XYZ'
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_xxxxxxx'
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xxxxxxx'
 
 /* ─────────────────────────────────────────
-   1. NAVBAR — add "scrolled" class on scroll
+   1. NAVBAR — scroll effect + hamburger toggle
 ───────────────────────────────────────── */
 (function initNav() {
-  const navbar = document.getElementById('navbar');
+  const navbar    = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+
   if (!navbar) return;
 
-  const onScroll = () => {
+  // Scroll: add "scrolled" class
+  window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 40);
-  };
+  }, { passive: true });
 
-  window.addEventListener('scroll', onScroll, { passive: true });
+  // Hamburger: toggle mobile menu
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    // Close menu when a nav link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
 })();
 
 /* ─────────────────────────────────────────
