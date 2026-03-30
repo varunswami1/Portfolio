@@ -3,24 +3,9 @@
    DSE3251 Web Technologies · MUJ 2027
 ───────────────────────────────────────── */
 
-/* ═══════════════════════════════════════
-   EMAILJS CONFIGURATION
-   -------
-   Steps to activate the contact form:
-   1. Sign up free at https://www.emailjs.com
-   2. Create a new Email Service (Gmail recommended)
-   3. Create an Email Template — use these variables in it:
-        {{from_name}}   → sender's name
-        {{reply_to}}    → sender's email
-        {{subject}}     → message subject
-        {{message}}     → message body
-        {{to_name}}     → put "Varun" or any fixed text
-   4. Copy your Public Key, Service ID, and Template ID
-   5. Replace the three placeholder strings below
-═══════════════════════════════════════ */
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abc123XYZ'
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_xxxxxxx'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xxxxxxx'
+const EMAILJS_PUBLIC_KEY  = 'me69vZfOASKNtOK0l';   
+const EMAILJS_SERVICE_ID  = 'service_ewxtz2e';   
+const EMAILJS_TEMPLATE_ID = 'template_mwpmrkh'; 
 
 /* ─────────────────────────────────────────
    1. NAVBAR — scroll effect + hamburger toggle
